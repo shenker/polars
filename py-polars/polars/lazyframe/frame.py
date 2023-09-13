@@ -1925,7 +1925,7 @@ naive plan: (run LazyFrame.explain(optimized=True) to see the optimized plan)
         slice_pushdown: bool = True,
     ) -> DataFrame:
         """
-        Collect and write a LazyFrame in streaming mode to a Parquet file at the path.
+        Evaluate the query in streaming mode and write to a Parquet file at the path.
 
         This allows streaming results that are larger than RAM to be written to disk.
 
@@ -2014,7 +2014,7 @@ naive plan: (run LazyFrame.explain(optimized=True) to see the optimized plan)
         slice_pushdown: bool = True,
     ) -> DataFrame:
         """
-        Collect and write a LazyFrame in streaming mode to an IPC file at the path.
+        Evaluate the query in streaming mode and write to an IPC file at the path.
 
         This allows streaming results that are larger than RAM to be written to disk.
 
@@ -2090,7 +2090,7 @@ naive plan: (run LazyFrame.explain(optimized=True) to see the optimized plan)
         slice_pushdown: bool = True,
     ) -> DataFrame:
         """
-        Collect and write a LazyFrame in streaming mode to a CSV file at the path.
+        Evaluate the query in streaming mode and write to a CSV file at the path.
 
         This allows streaming results that are larger than RAM to be written to disk.
 
