@@ -4495,7 +4495,6 @@ class Series:
         )
         return s.extend_constant(None, n=n) if n > 0 else s
 
-
     def clone(self) -> Self:
         """
         Create a copy of this Series.
