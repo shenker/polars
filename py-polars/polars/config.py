@@ -436,7 +436,7 @@ class Config(contextlib.ContextDecorator):
     @classmethod
     def set_fmt_float(cls, fmt: FloatFmt | None = "mixed") -> type[Config]:
         """
-        Control how floating  point values are displayed.
+        Control how floating point values are displayed.
 
         Parameters
         ----------
@@ -454,7 +454,6 @@ class Config(contextlib.ContextDecorator):
         [
                 1.230498
         ]
-
         >>> with pl.Config(set_fmt_float="full"):
         ...     print(s)
         ...
