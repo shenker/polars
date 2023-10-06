@@ -165,8 +165,9 @@ Each user guide page is based on a `.md` markdown file. This file must be listed
 
 #### Adding a shell code block
 
-To add a code block with code to be run in a shell with tabs for Python and Rust use the following format
-`
+To add a code block with code to be run in a shell with tabs for Python and Rust, use the following format:
+
+````
 === ":fontawesome-brands-python: Python"
 
     ```shell
@@ -178,13 +179,15 @@ To add a code block with code to be run in a shell with tabs for Python and Rust
     ```shell
     $ cargo add aws_sdk_s3
     ```
-
-`
+````
 
 #### Adding a code block
 
-The snippets for Python and Rust code blocks are in the `docs/src/python/` and `docs/src/rust/` directories respectively. To add a code snippet with Python or Rust code to a `.md` page use the following format
-`{{code_block('user-guide/io/cloud-storage','read_parquet',[read_parquet,read_csv])}}`
+The snippets for Python and Rust code blocks are in the `docs/src/python/` and `docs/src/rust/` directories, respectively. To add a code snippet with Python or Rust code to a `.md` page, use the following format:
+
+```
+{{code_block('user-guide/io/cloud-storage','read_parquet',[read_parquet,read_csv])}}
+```
 
 - The first argument is a path to either or both files called `docs/src/python/user-guide/io/cloud-storage.py` and `docs/src/rust/user-guide/io/cloud-storage.rs`.
 - The second argument is the name given at the start and end of each snippet in the `.py` or `.rs` file
@@ -193,25 +196,20 @@ The snippets for Python and Rust code blocks are in the `docs/src/python/` and `
 If the corresponding `.py` and `.rs` snippet files both exist then each snippet named in the second argument to `code_block` above must exist or the build will fail. An empty snippet should be added to the `.py` or `.rs` file if the snippet is not needed.
 
 Each snippet is formatted as follows:
-`
 
+```python
 # --8<-- [start:read_parquet]
-
 import polars as pl
 
-source = "s3://bucket/*.parquet"
-
-df = pl.read_parquet(source)
-
+df = pl.read_parquet("file.parquet")
 # --8<-- [end:read_parquet]
+```
 
-`The snippet is delimited by`--8<-- [start:<snippet_name>]`and`--8<-- [end:<snippet_name>]`. The snippet name must match the name given in the second argument to`code_block` above.
+The snippet is delimited by `--8<-- [start:<snippet_name>]` and `--8<-- [end:<snippet_name>]`. The snippet name must match the name given in the second argument to `code_block` above.
 
 #### Linting
 
-Before committing install `dprint` (see above) and run
-`dprint fmt`
-from the `docs` directory to link the markdown files.
+Before committing, install `dprint` (see above) and run `dprint fmt` from the `docs` directory to lint the markdown files.
 
 ### API reference
 
