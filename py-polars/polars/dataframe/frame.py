@@ -6523,7 +6523,9 @@ class DataFrame:
 
     def clone(self) -> Self:
         """
-        Create a copy of a DataFrame. This is a cheap operation that does not copy data.
+        Create a copy of this DataFrame.
+
+        This is a cheap operation that does not copy data.
 
         See Also
         --------
