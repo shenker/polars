@@ -306,10 +306,12 @@ def test_compare_frame_equal_nested_nans() -> None:
     )
 
     assert_frame_equal(df3, df3)
-    assert_frame_not_equal(df3, df3, nans_compare_equal=False)
+    with pytest.deprecated_call():
+        assert_frame_not_equal(df3, df3, nans_compare_equal=False)
 
     assert_frame_equal(df4, df4)
-    assert_frame_not_equal(df4, df4, nans_compare_equal=False)
+    with pytest.deprecated_call():
+        assert_frame_not_equal(df4, df4, nans_compare_equal=False)
 
     assert_frame_not_equal(df3, df4)
     for check_dtype in (True, False):
