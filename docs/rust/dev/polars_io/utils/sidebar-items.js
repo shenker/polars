@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["get_reader_bytes","materialize_projection","resolve_homedir"],"static":["BOOLEAN_RE","FLOAT_RE","INTEGER_RE"]};
